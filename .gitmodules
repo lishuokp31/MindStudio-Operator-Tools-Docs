@@ -38,3 +38,6 @@
     path = mstx
     url = https://gitcode.com/Ascend/mstx.git
     branch = master
+[submodule "msopcom"]
+    path = msopcom
+    url = https://gitcode.com/Ascend/msopcom.git

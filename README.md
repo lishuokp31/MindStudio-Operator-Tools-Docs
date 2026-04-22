@@ -39,7 +39,7 @@ MindStudio-Operator-Tools 文档托管仓库
 git clone --recurse-submodules <repo-url>
 cd mindstudio-profiler-docs
 git submodule sync --recursive
-git submodule update --init --recursive
+git submodule update --init --recursive --depth=1
 git submodule update --remote --recursive
 ```
 

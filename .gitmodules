@@ -1,0 +1,43 @@
+[submodule "msot"]
+    path = msot
+    url = https://gitcode.com/Ascend/msot.git
+    branch = master
+[submodule "mskpp"]
+    path = mskpp
+    url = https://gitcode.com/Ascend/mskpp.git
+    branch = master
+[submodule "msopgen"]
+    path = msopgen
+    url = https://gitcode.com/Ascend/msopgen.git
+    branch = master
+[submodule "mssanitizer"]
+    path = mssanitizer
+    url = https://gitcode.com/Ascend/mssanitizer.git
+    branch = master
+[submodule "msdebug"]
+    path = msdebug
+    url = https://gitcode.com/Ascend/msdebug.git
+    branch = master
+[submodule "msopprof"]
+    path = msopprof
+    url = https://gitcode.com/Ascend/msopprof.git
+    branch = master
+[submodule "msopscommon"]
+    path = msopscommon
+    url = https://gitcode.com/Ascend/msopcom.git
+    branch = master
+[submodule "msoptuner"]
+    path = msoptuner
+    url = https://gitcode.com/Ascend/msoptuner.git
+    branch = master
+[submodule "mskl"]
+    path = mskl
+    url = https://gitcode.com/Ascend/mskl.git
+    branch = master
+[submodule "mstx"]
+    path = mstx
+    url = https://gitcode.com/Ascend/mstx.git
+    branch = master
+[submodule "msopcom"]
+    path = msopcom
+    url = https://gitcode.com/Ascend/msopcom.git

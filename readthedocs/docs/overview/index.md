@@ -366,8 +366,6 @@ hide:
 })();
 </script> -->
 
-![profiling-data](../assets/images/fullview.svg)
-
 ## TODO:工具总览和描述
 
 

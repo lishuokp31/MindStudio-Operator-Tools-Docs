@@ -77,7 +77,7 @@ TOOLS = [
             ("典型案例", "source/best_practices/basic_cases.md"),
             ("API参考", "source/api_reference/mssanitizer_api_reference.md"),
             ("FAQ", "source/support/faq.md"),
-            ("架构设计说明书", "source/support/development_guide/architecture.md"),
+            ("架构设计说明书", "source/development_guide/architecture.md"),
             ("开发指南", "source/development_guide/develop_guide.md"),
         ],
     },
@@ -95,7 +95,7 @@ TOOLS = [
             ("使用指南", "source/user_guide/msdebug_user_guide.md"),
             ("典型案例", "source/best_practices/basic_cases.md"),
             ("FAQ", "source/support/faq.md"),
-            ("架构设计说明书", "source/support/development_guide/architecture.md"),
+            ("架构设计说明书", "source/development_guide/architecture.md"),
             ("开发指南", "source/development_guide/develop_guide.md"),
         ],
     },
@@ -112,7 +112,7 @@ TOOLS = [
             ("安装指南", "source/install_guide/msopprof_install_guide.md"),
             ("使用指南", "source/user_guide/msopprof_user_guide.md"),
             ("典型案例", "source/best_practices/typical_cases.md"),
-            ("架构设计说明书", "source/support/development_guide/architecture.md"),
+            ("架构设计说明书", "source/development_guide/architecture.md"),
             ("开发指南", "source/development_guide/develop_guide.md"),
         ],
     },
@@ -155,7 +155,7 @@ TOOLS = [
         "repo_readme": "README.md",
         "entry_points": [
             ("安装指南", "source/development_guide/develop_guide.md"),
-            ("架构设计说明书", "source/support/development_guide/architecture.md"),
+            ("架构设计说明书", "source/development_guide/architecture.md"),
             ("开发指南", "source/development_guide/develop_guide.md"),
         ],
     },
@@ -184,6 +184,7 @@ NON_NAV_NAMES = {
 }
 
 NAV_ORDER = [
+    #  文件顺序
     "index.md",             # 首页
     "overview.md",          # 总体概览
     "*_quick_start.md",      # 快速入门
@@ -194,23 +195,41 @@ NAV_ORDER = [
     "faq.md",               # FAQ
     "architecture.md",      # 架构设计说明书
     "develop_guide.md",     # 开发指南
+
+    # 目录顺序
+    "overview",
+    "quick_start",
+    "install_guide",
+    "user_guide",
+    "best_practices",
+    "api_reference",
+    "support",
+    "development_guide",
 ]
 
 DISPLAY_DIR_WHITELIST = {
-
+    "overview",
+    "quick_start",
+    "install_guide",
+    "user_guide",
+    "best_practices",
+    "api_reference",
+    "support",
+    "development_guide",
+    "figures"
 }
 
 DISPLAY_FILE_WHITELIST = {
-    "index.md",             # 首页
-    "overview.md",          # 总体概览
-    "*_quick_start.md",      # 快速入门
-    "*_install_guide.md",    # 安装指南
-    "*_user_guide.md",       # 使用指南
-    "example.md",           # 典型案例
-    "*_api_reference.md",    # API参考
-    "faq.md",               # FAQ
-    "architecture.md",      # 架构设计说明书
-    "develop_guide.md",     # 开发指南
+    # "index.md",             # 首页
+    # "overview.md",          # 总体概览
+    # "*_quick_start.md",     # 快速入门
+    # "*_install_guide.md",   # 安装指南
+    # "*_user_guide.md",      # 使用指南
+    # "example.md",           # 典型案例
+    # "*_api_reference.md",   # API参考
+    # "faq.md",               # FAQ
+    # "architecture.md",      # 架构设计说明书
+    # "develop_guide.md",     # 开发指南
 }
 
 
@@ -540,7 +559,7 @@ def build_directory_indexes(root: Path, title_prefix: str) -> None:
 
         relative = directory.relative_to(root)
         heading = title_prefix if relative == Path(".") else relative.name.replace("-", " ").replace("_", " ")
-        lines = [f"# {heading}", "", "该目录内容由构建脚本自动汇总。", ""]
+        lines = [f"# {heading}", "", "", ""]
 
         if subdirectories:
             lines.extend(["## 子目录", ""])
@@ -592,43 +611,8 @@ def rewrite_repo_readme_links(content: str | None, tool: dict, source_root: Path
         "docs/zh": "source",
         "./docs": "./source",
     }
-    README_LINK_REPLACE_WHITELIST = {
-        "officialAccount.png",
-    }
-
-    # ---------- 白名单敏感的链接替换 ----------
-    def replace_url_if_allowed(match: re.Match[str]) -> str:
-        """对匹配到的 Markdown 链接，仅当 URL 不命中白名单时才执行路径替换。"""
-        pass
-
-    # 方案：使用两个独立的正则分别替换两种链接形式，保持代码清晰。
-    # 1. 替换 [text](url)
-    def replace_markdown_link(m: re.Match[str]) -> str:
-        text = m.group(1)
-        url = m.group(2).strip()
-        suffix = m.group(3) or ""  # 可能包含锚点或查询参数，本场景简单起见暂不考虑
-        # 检查白名单
-        if any(keyword in url for keyword in README_LINK_REPLACE_WHITELIST):
-            return m.group(0)  # 保留原样
-        # 对 URL 执行替换
-        new_url = url
-        for old, new in replacements.items():
-            new_url = new_url.replace(old, new)
-        return f"[{text}]({new_url}{suffix})"
-
-    # 2. 替换自动链接 <url>
-    def replace_autolink(m: re.Match[str]) -> str:
-        url = m.group(1).strip()
-        if any(keyword in url for keyword in README_LINK_REPLACE_WHITELIST):
-            return m.group(0)
-        new_url = url
-        for old, new in replacements.items():
-            new_url = new_url.replace(old, new)
-        return f"<{new_url}>"
-
-    # 执行链接替换
-    content = re.sub(r"\[([^\]]+)\]\(([^)]+?)(#[^)]+)?\)", replace_markdown_link, content)
-    content = re.sub(r"<([^>\s]+)>", replace_autolink, content)
+    for old, new in replacements.items():
+        content = content.replace(old, new)
 
     # Allow Markdown links inside aligned HTML wrappers from repo READMEs.
     content = content.replace('<div align="center">', '<div align="center" markdown="1">')

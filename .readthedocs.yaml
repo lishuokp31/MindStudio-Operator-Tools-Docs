@@ -6,14 +6,14 @@ build:
     python: "3.11"
   jobs:
     post_checkout:
-      - git submodule sync --recursive
-      - git submodule update --init --recursive --depth 1
+      - git submodule sync
+      - git submodule update --init --depth 1
     pre_build:
       - python readthedocs/scripts/build_docs.py
 
 submodules:
   include: all
-  recursive: true
+  recursive: false
 
 python:
   install:

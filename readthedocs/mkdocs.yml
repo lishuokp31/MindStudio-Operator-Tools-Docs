@@ -1,8 +1,8 @@
-site_name: MindStudio Profiler Tools
-site_description: Ascend performance tooling portal built from MSTT submodules.
-site_url: https://mstt.readthedocs.io/zh-cn/latest/
-repo_url: https://gitcode.com/Ascend/mstt
-repo_name: Ascend/mstt
+site_name: MindStudio Operator Tools
+site_description: Ascend operator tooling portal built from MSOT submodules.
+site_url: https://msot.readthedocs.io/zh-cn/latest/
+repo_url: https://gitcode.com/Ascend/msot
+repo_name: Ascend/msot
 edit_uri: ""
 docs_dir: docs
 site_dir: site
@@ -80,4 +80,4 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/git-alt
-      link: https://gitcode.com/Ascend/mstt
+      link: https://gitcode.com/Ascend/msot

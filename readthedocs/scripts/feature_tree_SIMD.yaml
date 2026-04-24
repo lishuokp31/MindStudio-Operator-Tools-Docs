@@ -1,0 +1,724 @@
+
+title: MindStudio Operator Tools SIMD 全功能特性树
+all_versions:
+- AscendC SIMD 310B
+- AscendC SIMD A3
+- AscendC SIMD A5
+- Triton A3
+- Triton A5
+- CATLASS A3
+- CATLASS A5
+- PyPTO A3
+- PyPTO A5
+- TileLang A3
+- TileLang A5
+
+features:
+- name: 算子设计
+  icon: cogs
+  children:
+  - name: 精度设计
+    icon: folder-open
+    children:
+    - name: 精度设计
+      icon: list-check
+      children:
+      - name: 精度设计
+  - name: 理论性能建模
+    icon: folder-open
+    children:
+    - name: 理论性能建模
+      icon: list-check
+      children:
+      - name: 理论性能建模
+  - name: 模板库自动寻优
+    icon: folder-open
+    children:
+    - name: 自动寻优
+      icon: list-check
+      children:
+      - name: 支持模板库自动寻优
+        version:
+        - CATLASS A3
+        - CATLASS A5
+      - name: 支持搜索空间拓展
+        version:
+        - CATLASS A3
+        - CATLASS A5
+      - name: 支持剪枝函数注册
+        version:
+        - CATLASS A3
+        - CATLASS A5
+      - name: 支持模板库接入
+      - name: 基于建模的寻优过程自动剪枝
+      - name: 基于多个case的综合寻优策略
+      - name: 基于JIT的编译效率提升
+    - name: 性能分析
+      icon: list-check
+      children:
+      - name: 算子耗时展示
+        version:
+        - CATLASS A3
+        - CATLASS A5
+      - name: 算力使用情况展示
+      - name: 带宽展示
+      - name: 支持与加速库进行性能比对
+      - name: 指导搜索空间拓展优化
+    - name: 精度比对
+      icon: list-check
+      children:
+      - name: 支持与加速库进行结果精度比对
+    - name: 辅助特性
+      icon: list-check
+      children:
+      - name: 算子名称筛选
+        version:
+        - CATLASS A3
+        - CATLASS A5
+      - name: L2Cache控制
+      - name: 预热控制
+      - name: 执行模式控制（图模式、单算子模式）
+      - name: 数据生成控制（分布策略）
+- name: 算子开发
+  icon: cogs
+  children:
+  - name: 算子迁移
+    icon: folder-open
+    children:
+    - name: 算子迁移
+      icon: list-check
+      children:
+      - name: 算子迁移
+  - name: 辅助编码
+    icon: folder-open
+    children:
+    - name: 辅助编码
+      icon: list-check
+      children:
+      - name: 辅助编码
+  - name: 快捷调用
+    icon: folder-open
+    children:
+    - name: 快捷调用
+      icon: list-check
+      children:
+      - name: 快捷调用
+        version:
+        - AscendC SIMD 310B:part(80%)
+        - AscendC SIMD A3:part(80%)
+        - AscendC SIMD A5:part(80%)
+  - name: 精度验证
+    icon: folder-open
+    children:
+    - name: 精度验证
+      icon: list-check
+      children:
+      - name: 精度验证
+  - name: 功能验证
+    icon: folder-open
+    children:
+    - name: 功能验证
+      icon: list-check
+      children:
+      - name: 功能验证
+- name: 算子测试
+  icon: cogs
+  children:
+  - name: 精度测试
+    icon: folder-open
+    children:
+    - name: 精度测试
+      icon: list-check
+      children:
+      - name: 精度测试
+- name: 算子调试
+  icon: cogs
+  children:
+  - name: 在板调试
+    icon: folder-open
+    children:
+    - name: 断点设置
+      icon: list-check
+      children:
+      - name: 普通断点
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 条件断点
+      - name: 地址断点
+        version:
+        - AscendC SIMD A3:part(80%)
+        - CATLASS A3:part(80%)
+      - name: Kernel入口断点
+    - name: 程序执行控制
+      icon: list-check
+      children:
+      - name: Continue
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: SingleStep
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: StepOver
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: StepIn
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: StepOut
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: CTRL_C
+        version:
+        - AscendC SIMD A3:part(80%)
+        - CATLASS A3:part(80%)
+    - name: 上下文切换
+      icon: list-check
+      children:
+      - name: 设备内上下文切换（核切换）
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 设备切换
+        version:
+        - AscendC SIMD A3:part(50%)
+        - CATLASS A3:part(50%)
+      - name: 寄存器查询
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 上下文信息查询（核id等）
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 常量区域查询
+    - name: 内存访问
+      icon: list-check
+      children:
+      - name: 变量读
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 变量写
+      - name: 内存读
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 内存写
+      - name: Host程序侧读Device内存
+      - name: Host程序侧写Device内存
+    - name: Coredump解析
+      icon: list-check
+      children:
+      - name: Coredump展示寄存器
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Coredump展示调用栈
+        version:
+        - AscendC SIMD A3
+        - Triton A3
+        - CATLASS A3
+      - name: Coredump展示内存
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+    - name: 辅助特性
+      icon: list-check
+      children:
+      - name: 支持attach进程方式调试
+      - name: 自动捕获并检查Host API错误码
+      - name: 自动捕获并检查硬件错误信息
+      - name: 自动单步执行定位异常代码
+      - name: 图模式支持(单流)
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+      - name: 图模式支持(多流)
+      - name: Host程序调试能力
+        version:
+        - AscendC SIMD A3
+        - CATLASS A3
+    - name: 开放接口
+      icon: list-check
+      children:
+      - name: Initialzation API:初始化调试模式的API
+      - name: Device Execution Control API:控制硬件继续运行与单步执行
+      - name: Breakpoints API:控制断点的设置取消
+      - name: Device State Inspection API:查询Device上的内存等信息
+      - name: Device State Alteration API:用于修改Device上的内存等信息
+      - name: Properties API:硬件/程序属性查询
+      - name: 'DWARF Utilities API: DWARF工具封装API'
+      - name: 'Events: 标识硬件上报的各种事件'
+  - name: 异常检测
+    icon: folder-open
+    children:
+    - name: Memcheck（内存检测）
+      icon: list-check
+      children:
+      - name: 内存非对齐对齐(Device)
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 内存越界访问检查(Device)
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 硬件异常上报(Device)
+      - name: 非法malloc/free使用检查（Device）
+      - name: Device malloc泄漏检查（Device）
+      - name: Api调用错误检查(Host)
+        version:
+        - AscendC SIMD A3:part(50%)
+        - AscendC SIMD A5:part(50%)
+        - Triton A3:part(50%)
+        - Triton A5:part(50%)
+        - CATLASS A3:part(50%)
+        - CATLASS A5:part(50%)
+      - name: Api调用错误检查(Device)
+        version:
+        - AscendC SIMD A3:part(80%)
+      - name: Malloc GM内存泄露检查（Host）
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 连续buffer访问越界检测（Host/Device)
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Stream间竞争检测（Host）
+      - name: 内存踩踏检测（Device）
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+    - name: Racecheck（竞争检测）
+      icon: list-check
+      children:
+      - name: 流水间竞争检测
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 流水内竞争检测
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 核间竞争检测
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: cluster间共享内存竞争检测
+      - name: 卡间共享内存竞争检测
+    - name: Initcheck（初始化检测）
+      icon: list-check
+      children:
+      - name: 读未初始化内存（Host）
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 读未初始化内存（Device）
+        version:
+        - AscendC SIMD A3
+        - Triton A3
+        - CATLASS A3
+      - name: 申请但未使用内存检测（Host）
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 申请但未使用内存检测（Device）
+        version:
+        - AscendC SIMD A3
+        - Triton A3
+        - CATLASS A3
+    - name: Synccheck（同步检测）
+      icon: list-check
+      children:
+      - name: 同步语义死锁检测
+      - name: 同步语义使用错误检测（入参、调用位置等）
+      - name: 同步语义配对/冗余检测
+        version:
+        - AscendC SIMD A3:part(60%)
+        - Triton A3:part(60%)
+        - CATLASS A3:part(60%)
+    - name: Overflowcheck（溢出检测）
+      icon: list-check
+      children:
+      - name: 数值计算溢出检测（Device）
+    - name: 辅助特性
+      icon: list-check
+      children:
+      - name: 支持控制并发or串行检测
+      - name: 支持Host异常点堆栈展示
+      - name: 支持Device异常点堆栈展示
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5:part(60%)
+        - Triton A3
+        - Triton A5:part(60%)
+        - CATLASS A3
+        - CATLASS A5:part(60%)
+      - name: 支持GPU动态并行任务的异常检测
+      - name: 支持程序结束时寄存器状态检测
+        version:
+        - AscendC SIMD A3
+      - name: Kernel名称过滤
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 异常时可以生成core文件，用于调试器分析
+      - name: 识别到异常时动作（终止执行，继续执行）
+      - name: 误报抑制文件控制误报情况
+      - name: 免编译检测能力使能
+        version:
+        - AscendC SIMD A3:part(20%)
+        - AscendC SIMD A5
+        - Triton A3:part(20%)
+        - Triton A5
+        - CATLASS A3:part(20%)
+        - CATLASS A5
+      - name: 图模式支持
+        version:
+        - AscendC SIMD A3:part(50%)
+        - AscendC SIMD A5:part(50%)
+        - Triton A3:part(50%)
+        - Triton A5:part(50%)
+        - CATLASS A3:part(50%)
+        - CATLASS A5:part(50%)
+      - name: 支持进程attach方式检测
+    - name: 开放接口
+      icon: list-check
+      children:
+      - name: Memory API，支持用户替换CUDA API配合工具使用（Host）
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Callback API，支持用户在CUDA API上注册自己的回调（Host）
+      - name: Patching API，支持用户在Kernel内存操作上注册回调（Device）
+    - name: TX拓展接口支持
+      icon: list-check
+      children:
+      - name: Suballocation API，支持程序向工具上报自规划内存池使用情况
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Naming API，支持对分配的内存进行标记
+      - name: Permissions API，支持对内存设置可读写属性
+      - name: Mark Initialized API，支持标记内存的初始化状态
+      - name: Kernel侧TX能力支持
+        version:
+        - AscendC SIMD A3
+        - Triton A3
+        - CATLASS A3
+- name: 算子调优
+  icon: cogs
+  children:
+  - name: 在板调优
+    icon: folder-open
+    children:
+    - name: 采集方式
+      icon: list-check
+      children:
+      - name: Kernel级重放
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Application级重放
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Range级重放
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+    - name: 采集指标
+      icon: list-check
+      children:
+      - name: 内存负载分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 计算负载分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Roofline分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 通信拓扑分析
+      - name: PMU采样分析
+      - name: L2Cache命中统计
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: ICache命中统计
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 资源负载均衡分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 热点指令分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 算子流水轨迹分析
+        version:
+        - AscendC SIMD A5:part(50%)
+        - Triton A5:part(50%)
+        - CATLASS A5:part(50%)
+      - name: 通算掩盖流水分析
+        version:
+        - AscendC SIMD A3:part(50%)
+        - AscendC SIMD A5:part(50%)
+        - CATLASS A3:part(50%)
+        - CATLASS A5:part(50%)
+      - name: 局部PMU数据分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: L2Cache热点建模分析
+        version:
+        - AscendC SIMD A3
+        - Triton A3
+        - CATLASS A3
+    - name: 辅助特性
+      icon: list-check
+      children:
+      - name: 自动预热
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Cache控制
+      - name: 交互式调优
+      - name: 频率控制
+      - name: 性能报告比对
+      - name: Attach进程调优
+      - name: 图模式支持
+      - name: 调优报告评论
+      - name: Kernel筛选
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: CPU调用栈
+      - name: 任务完成后程序控制
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+    - name: 开放接口
+      icon: list-check
+      children:
+      - name: CUPTI采集控制接口
+      - name: Profiling报告解析接口
+      - name: 专家建议注册接口
+      - name: 可视化页面配置接口
+      - name: 资源利用率预测接口
+      - name: python调优框架
+    - name: TX拓展接口支持
+      icon: list-check
+      children:
+      - name: 支持基于TX接口的采集范围控制
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+  - name: 仿真调优
+    icon: folder-open
+    children:
+    - name: 采集方式
+      icon: list-check
+      children:
+      - name: 基于仿真器采集程序性能数据
+        version:
+        - AscendC SIMD 310B
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 上板执行过程中仿真局部算子
+        version:
+        - AscendC SIMD A3
+        - Triton A3
+        - CATLASS A3
+    - name: 采集指标
+      icon: list-check
+      children:
+      - name: 仿真指令流水图
+        version:
+        - AscendC SIMD 310B
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 仿真带宽波形图
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 同步指令配对关联分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: Scalar头开销展示
+      - name: 仿真代码热点分析
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5:part(60%)
+        - Triton A3
+        - Triton A5:part(60%)
+        - CATLASS A3
+        - CATLASS A5:part(60%)
+    - name: 辅助特性
+      icon: list-check
+      children:
+      - name: Kernel筛选
+        version:
+        - AscendC SIMD 310B
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
+      - name: 任务完成后程序控制
+        version:
+        - AscendC SIMD 310B
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5

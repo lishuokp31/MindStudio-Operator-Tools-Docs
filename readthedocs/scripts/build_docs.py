@@ -7,6 +7,7 @@ import tarfile
 import tempfile
 import fnmatch
 from pathlib import Path
+from yaml_to_html import generate_feature_tree
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -680,6 +681,17 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    success = generate_feature_tree(
+        yaml_path="feature_tree_SIMD.yaml",
+        template_path="feature_template.html",
+        output_path="../docs/overview/index.md",
+        inject_marker="<!-- FEATURE_TREE_INJECT_HERE -->"
+    )
+
+    if success:
+        print("特性树页面生成成功！")
+    else:
+        print("生成失败！")
 
 # TODO：
 # 更新小助手图片并替换链接

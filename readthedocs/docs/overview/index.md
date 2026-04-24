@@ -9,7 +9,7 @@ hide:
 
 ## 算子工具链
 
-<style>
+<!-- <style>
 .ai-arch-container {
     --ai-accent-blue: #3b82f6;
     --ai-text-dark: #1e293b;
@@ -217,154 +217,492 @@ hide:
         padding: 12px;
     }
 }
-</style>
+</style> -->
 
-<!-- <div class="ai-arch-container">
-    <div class="arch-wrapper" id="container">
-        <div class="main-layers">
-            <div class="layer-section">
-                <div class="layer-title">分析工具</div>
-                <div class="layer-content">
-                    <div class="module" data-title="msprof-analyze" data-desc="面向 AI 训练与推理场景的性能分析工具，具备性能比对、集群分析、专家建议等功能。">
-                        msprof-analyze
-                    </div>
-                    <div class="module" data-title="msAgent" data-desc="专注于性能问题定位的Agent。">
-                        msAgent
-                    </div>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>开源AI工具 - 全功能特性树</title>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
 
-            <div class="layer-section">
-                <div class="layer-title">性能监控</div>
-                <div class="layer-content">
-                    <div class="module span-2 flex-center" data-title="msMonitor" data-desc="面向昇腾集群场景的在线性能监控与动态采集工具。">
-                        MindStudio Monitor
-                    </div>
-                </div>
-            </div>
+        :root {
+            --bg: #f0f2f5;
+            --card: #ffffff;
+            --title: #111827;
+            --text1: #1f2937;
+            --text2: #374151;
+            --text3: #4b5563;
+            --border: #e5e7eb;
+            --line: #d1d5db;
+            --hover: #f9fafb;
+            --color-ai: #2563eb;
+            --color-code: #059669;
+            --color-plugin: #7c3aed;
+            --color-tool: #d946ef;
+            --color-deploy: #ea580c;
+        }
 
-            <div class="layer-section">
-                <div class="layer-title">AI框架</div>
-                <div class="layer-content justify-content-around">
-                    <div class="module" data-title="PyTorch Profiler" data-desc="基于PyTorch框架开发的昇腾软硬件性能调优工具。">PyTorch Profiler</div>
-                    <div class="module" data-title="MindSpore Profiler" data-desc="基于昇思MindSpore框架开发的昇腾软硬件性能调优工具。">MindSpore Profiler</div>
-                </div>
-            </div>
+        [data-theme="dark"] {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --title: #f9fafb;
+            --text1: #f3f4f6;
+            --text2: #e5e7eb;
+            --text3: #d1d5db;
+            --border: #333333;
+            --line: #444444;
+            --hover: #2d2d2d;
+        }
 
-            <div class="layer-section">
-                <div class="layer-title">基础能力</div>
-                <div class="layer-content layer-content-3">
-                    <div class="module" data-title="msProf" data-desc="昇腾Profiling命令行工具，支持采集与解析 CANN 平台及昇腾 AI 处理器的软硬件性能数据。">msProf</div>
-                    <div class="module" data-title="MSTX" data-desc="MindStudio Tools Extension Library，支持用户自定义打点。">MSTX</div>
-                    <div class="module" data-title="MSPTI" data-desc="MindStudio Profiler Tools Interface，面向昇腾设备的 Profiling API 集合。">MSPTI</div>
-                </div>
+        body {
+            padding: 30px;
+            background-color: var(--bg);
+        }
+
+        .feature-tree-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .tool-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tree-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--title);
+            margin: 0;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--hover);
+            color: var(--text2);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* 版本标签 */
+        .version-label {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 12px;
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-weight: bold;
+            letter-spacing: 0.4px;
+            white-space: nowrap;
+        }
+
+        .v-support {
+            background-color: #ecfdf5;
+            color: #067f4d;
+            border: 1px solid #a7f3d0;
+        }
+
+        .v-unsupport {
+            background-color: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .v-part {
+            background-color: #fffbeb;
+            color: #d97706;
+            border: 1px solid #fcd34d;
+        }
+
+        [data-theme="dark"] .v-support {
+            background-color: #064e3b;
+            color: #a7f3d0;
+            border-color: #047857;
+        }
+
+        [data-theme="dark"] .v-unsupport {
+            background-color: #7f1d1d;
+            color: #fecaca;
+            border-color: #b91c1c;
+        }
+
+        [data-theme="dark"] .v-part {
+            background-color: #78350f;
+            color: #fcd34d;
+            border-color: #d97706;
+        }
+
+        /* 树形结构 */
+        .tree-node {
+            list-style: none;
+            padding-left: 32px;
+            position: relative;
+        }
+
+        .tree-root {
+            padding-left: 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: var(--text2);
+        }
+
+        .tree-item:hover {
+            background-color: var(--hover);
+            border-radius: 8px;
+            padding-left: 6px;
+        }
+
+        /* 展开箭头 */
+        .toggle-btn {
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 12px;
+            color: var(--text3);
+            user-select: none;
+            flex-shrink: 0;
+        }
+
+        .toggle-btn.collapsed::after {
+            content: "▶";
+        }
+
+        .toggle-btn.expanded::after {
+            content: "▼";
+        }
+
+        .no-toggle {
+            visibility: hidden;
+        }
+
+        /* 连接线 */
+        .tree-node::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 14px;
+            width: 1px;
+            height: 100%;
+            background-color: var(--line);
+        }
+
+        .tree-item::before {
+            content: "";
+            position: absolute;
+            top: 21px;
+            left: 14px;
+            width: 18px;
+            height: 1px;
+            background-color: var(--line);
+        }
+
+        .tree-root>.tree-node::before {
+            display: none;
+        }
+
+        .tree-root>.tree-node>.tree-item::before {
+            display: none;
+        }
+
+        /* 功能名称 + 图标 */
+        .feature-name {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-versions {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .icon {
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* 层级样式 */
+        /* 一级节点 */
+        .tree-root>.tree-node>.tree-item .feature-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text1);
+        }
+
+        /* 二级节点：按模块自动配色 */
+        .tree-root>.tree-node>.tree-child>.tree-node>.tree-item .feature-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--color-ai);
+        }
+
+        .tree-root>.tree-node:nth-child(2)>.tree-child>.tree-node>.tree-item .feature-name {
+            color: var(--color-code);
+        }
+
+        .tree-root>.tree-node:nth-child(3)>.tree-child>.tree-node>.tree-item .feature-name {
+            color: var(--color-plugin);
+        }
+
+        .tree-root>.tree-node:nth-child(4)>.tree-child>.tree-node>.tree-item .feature-name {
+            color: var(--color-tool);
+        }
+
+        .tree-root>.tree-node:nth-child(5)>.tree-child>.tree-node>.tree-item .feature-name {
+            color: var(--color-deploy);
+        }
+
+        /* 三级及以下 */
+        .tree-child .tree-child .tree-item .feature-name {
+            font-size: 14px;
+            color: var(--text3);
+        }
+    </style>
+</head>
+<body>
+    <div class="feature-tree-container">
+        <div class="tool-bar">
+            <h2 class="tree-title">开源AI工具 - 全功能特性树</h2>
+            <div class="action-group">
+                <button class="btn" id="expandAll"><i class="fa-solid fa-plus"></i> 全部展开</button>
+                <button class="btn" id="collapseAll"><i class="fa-solid fa-minus"></i> 全部收起</button>
+                <button class="btn btn-primary" id="toggleDark"><i class="fa-solid fa-moon"></i> 暗黑模式</button>
             </div>
         </div>
 
-        <div class="tool-card" data-title="MindStudio Insight" data-desc="全流程可视化性能分析套件，支持 Timeline、算子清单及智能瓶颈定位。">
-            MindStudio Insight
-        </div>
+        <ul class="tree-root" id="featureTree">
+            <!-- 一级模块 -->
+            <li class="tree-node">
+                <div class="tree-item">
+                    <span class="toggle-btn expanded"></span>
+                    <span class="feature-name">
+                        <i class="fa-solid fa-brain icon" style="color:#2563eb"></i>
+                        AI 核心能力模块
+                    </span>
+                    <div class="feature-versions">
+                        <span class="version-label v-support">V1.0</span>
+                        <span class="version-label v-support">V2.0</span>
+                        <span class="version-label v-support">V3.0</span>
+                    </div>
+                </div>
+                <ul class="tree-child">
+                    <li class="tree-node">
+                        <div class="tree-item">
+                            <span class="toggle-btn collapsed"></span>
+                            <span class="feature-name">
+                                <i class="fa-solid fa-file-lines icon"></i>
+                                文本生成能力
+                            </span>
+                            <div class="feature-versions">
+                                <span class="version-label v-support">V1.0</span>
+                                <span class="version-label v-support">V2.0</span>
+                                <span class="version-label v-support">V3.0</span>
+                            </div>
+                        </div>
+                        <ul class="tree-child" style="display: none;">
+                            <li class="tree-node">
+                                <div class="tree-item">
+                                    <span class="toggle-btn no-toggle"></span>
+                                    <span class="feature-name">通用文案生成</span>
+                                    <div class="feature-versions">
+                                        <span class="version-label v-support">V1.0</span>
+                                        <span class="version-label v-support">V2.0</span>
+                                        <span class="version-label v-support">V3.0</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="tree-node">
+                                <div class="tree-item">
+                                    <span class="toggle-btn no-toggle"></span>
+                                    <span class="feature-name">专业领域生成</span>
+                                    <div class="feature-versions">
+                                        <span class="version-label v-unsupport">V1.0</span>
+                                        <span class="version-label v-part">V2.0</span>
+                                        <span class="version-label v-support">V3.0</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
 
-        <div id="dynamic-preview">
-            <div class="preview-h" id="pre-title"></div>
-            <p class="preview-p" id="pre-desc"></p>
-        </div>
+                    <li class="tree-node">
+                        <div class="tree-item">
+                            <span class="toggle-btn collapsed"></span>
+                            <span class="feature-name">
+                                <i class="fa-solid fa-images icon"></i>
+                                多模态处理
+                            </span>
+                            <div class="feature-versions">
+                                <span class="version-label v-unsupport">V1.0</span>
+                                <span class="version-label v-support">V2.0</span>
+                                <span class="version-label v-support">V3.0</span>
+                            </div>
+                        </div>
+                        <ul class="tree-child" style="display: none;">
+                            <li class="tree-node">
+                                <div class="tree-item">
+                                    <span class="toggle-btn no-toggle"></span>
+                                    <span class="feature-name">图片理解</span>
+                                    <div class="feature-versions">
+                                        <span class="version-label v-unsupport">V1.0</span>
+                                        <span class="version-label v-support">V2.0</span>
+                                        <span class="version-label v-support">V3.0</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="tree-node">
+                <div class="tree-item">
+                    <span class="toggle-btn collapsed"></span>
+                    <span class="feature-name">
+                        <i class="fa-solid fa-code icon" style="color:#059669"></i>
+                        开发与API能力
+                    </span>
+                    <div class="feature-versions">
+                        <span class="version-label v-part">V1.0</span>
+                        <span class="version-label v-support">V2.0</span>
+                        <span class="version-label v-support">V3.0</span>
+                    </div>
+                </div>
+                <ul class="tree-child" style="display: none;"></ul>
+            </li>
+
+            <li class="tree-node">
+                <div class="tree-item">
+                    <span class="toggle-btn collapsed"></span>
+                    <span class="feature-name">
+                        <i class="fa-solid fa-puzzle-piece icon" style="color:#7c3aed"></i>
+                        插件与扩展生态
+                    </span>
+                    <div class="feature-versions">
+                        <span class="version-label v-unsupport">V1.0</span>
+                        <span class="version-label v-part">V2.0</span>
+                        <span class="version-label v-support">V3.0</span>
+                    </div>
+                </div>
+                <ul class="tree-child" style="display: none;"></ul>
+            </li>
+        </ul>
     </div>
-</div> -->
 
-<!-- <script>
-(function () {
-    const targetHrefMap = {
-        'msprof-analyze': '../msprof-analyze/',
-        'MindStudio Insight': '../msinsight/',
-        'msAgent': '../msagent/',
-        'msMonitor': '../msmonitor/',
-        'PyTorch Profiler': '../torch_npu_profiler/',
-        'MindSpore Profiler': 'https://www.mindspore.cn/mindinsight/docs/zh-CN/r2.3/performance_profiling_ascend.html',
-        'msProf': '../msprof/',
-        'MSTX': 'https://gitcode.com/Ascend/mstx',
-        'MSPTI': '../mspti/'
-    };
+    <script>
+        // 展开/收起单个节点
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const parentItem = this.closest('.tree-item');
+                const childList = parentItem.nextElementSibling;
+                if (!childList) return;
 
-    function initToolchainMap() {
-        const arch = document.querySelector('.ai-arch-container');
-        if (!arch || arch.dataset.initialized === 'true') {
-            return;
-        }
+                const isHidden = childList.style.display === 'none';
+                childList.style.display = isHidden ? 'block' : 'none';
+                this.classList.toggle('collapsed', !isHidden);
+                this.classList.toggle('expanded', isHidden);
+            });
+        });
 
-        arch.dataset.initialized = 'true';
+        // 全部展开
+        document.getElementById('expandAll').addEventListener('click', () => {
+            document.querySelectorAll('.tree-child').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('collapsed');
+                btn.classList.add('expanded');
+            });
+        });
 
-        const preview = arch.querySelector('#dynamic-preview');
-        const pTitle = arch.querySelector('#pre-title');
-        const pDesc = arch.querySelector('#pre-desc');
-        const container = arch.querySelector('#container');
-        const targets = arch.querySelectorAll('.module, .tool-card');
-
-        if (!preview || !pTitle || !pDesc || !container || !targets.length) {
-            return;
-        }
-
-        const hidePreview = () => {
-            preview.classList.remove('active');
-        };
-
-        const showPreview = (target) => {
-            if (window.innerWidth <= 850) {
-                return;
-            }
-
-            pTitle.innerText = target.getAttribute('data-title') || '';
-            pDesc.innerText = target.getAttribute('data-desc') || '';
-
-            const rect = target.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-
-            preview.style.top = (rect.top - containerRect.top) + 'px';
-            preview.style.left = (rect.right - containerRect.left + 15) + 'px';
-            preview.classList.add('active');
-        };
-
-        const navigateToTarget = (target) => {
-            const title = target.getAttribute('data-title') || '';
-            const href = targetHrefMap[title];
-            if (!href) {
-                return;
-            }
-
-            window.location.assign(href);
-        };
-
-        container.addEventListener('mouseleave', hidePreview);
-
-        targets.forEach((target) => {
-            target.setAttribute('role', 'link');
-            target.setAttribute('tabindex', '0');
-
-            target.addEventListener('mouseenter', () => showPreview(target));
-            target.addEventListener('focus', () => showPreview(target));
-            target.addEventListener('mouseleave', hidePreview);
-            target.addEventListener('blur', hidePreview);
-            target.addEventListener('click', () => navigateToTarget(target));
-            target.addEventListener('keydown', (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    navigateToTarget(target);
+        // 全部收起
+        document.getElementById('collapseAll').addEventListener('click', () => {
+            document.querySelectorAll('.tree-child').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                if (!btn.classList.contains('no-toggle')) {
+                    btn.classList.remove('expanded');
+                    btn.classList.add('collapsed');
                 }
             });
         });
-    }
 
-    if (typeof document$ !== 'undefined' && typeof document$.subscribe === 'function') {
-        document$.subscribe(initToolchainMap);
-    }
+        // 暗黑模式切换
+        const darkBtn = document.getElementById('toggleDark');
+        const icon = darkBtn.querySelector('i');
+        const text = darkBtn.childNodes[1];
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initToolchainMap, { once: true });
-    } else {
-        initToolchainMap();
-    }
-})();
-</script> -->
+        darkBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                icon.className = 'fa-solid fa-moon';
+                text.textContent = ' 暗黑模式';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                icon.className = 'fa-solid fa-sun';
+                text.textContent = ' 明亮模式';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
 
 ## TODO:工具总览和描述
 

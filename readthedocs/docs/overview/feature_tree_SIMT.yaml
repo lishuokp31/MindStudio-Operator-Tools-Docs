@@ -1,0 +1,40 @@
+title: MindStudio Operator Tools SIMD 全功能特性树
+versions: [asc SIMD 310B, asc SIMD A3, asc SIMD A5, Triton A3, Triton A5, CATLASS A3, CATLESS A5, PyPTO A3, PyPTO A5, TileLang A3, TileLang A5]
+
+features:
+  - name: 算子设计
+    icon: brain
+    children:
+      - name: 精度设计
+        icon: file-lines
+        children:
+          - name: 精度设计
+            children:
+              - name: 精度设计
+                version: []
+
+      - name: 性能理论建模
+        icon: file-lines
+        children:
+          - name: 性能理论建模
+            children:
+              - name: 性能理论建模
+                version: []
+
+      - name: 模板库自动寻优
+        children:
+          - name: 自动寻优
+            children:
+              - name: 支持模板库自动寻优
+                version: [CATLASS A3, CATLESS A5]
+
+
+      - name: 多模态处理
+        icon: images
+        children:
+          - name: 视觉理解
+            children:
+              - name: 图片内容理解
+                version: [unsupport, support, support]
+              - name: 图文问答交互
+                version: [unsupport, unsupport, support]

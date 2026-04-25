@@ -55,8 +55,8 @@ hide:
         /* 版本标签 */
         .version-label {
             display:inline-block; margin:3px 4px 3px 0;
-            font-size:9px;
-            padding:2px 5px;
+            font-size:12px;
+            padding:3px 6px;
             border-radius:6px;
             font-weight:bold; white-space:nowrap;
         }
@@ -115,18 +115,18 @@ hide:
         .icon { width:16px; text-align:center; flex-shrink:0; }
 
         /* 层级字号 */
-        .tree-root>.tree-node>.tree-item .feature-name { font-size:18px; font-weight:bold; color:var(--text1); }
-        .tree-root>.tree-node>.tree-child>.tree-node>.tree-item .feature-name { font-size:16px; font-weight:500; color:var(--color1); }
+        .tree-root>.tree-node>.tree-item .feature-name { font-size:20px; font-weight:bold; color:var(--text1); }
+        .tree-root>.tree-node>.tree-child>.tree-node>.tree-item .feature-name { font-size:18px; font-weight:500; color:var(--color1); }
         .tree-root>.tree-node:nth-child(2)>.tree-child>.tree-node>.tree-item .feature-name { color:var(--color2); }
         .tree-root>.tree-node:nth-child(3)>.tree-child>.tree-node>.tree-item .feature-name { color:var(--color3); }
-        .tree-child .tree-child .tree-item .feature-name { font-size:15px; color:var(--text2); }
-        .tree-child .tree-child .tree-child .tree-item .feature-name { font-size:14px; color:var(--text3); }
+        .tree-child .tree-child .tree-item .feature-name { font-size:17px; color:var(--text2); }
+        .tree-child .tree-child .tree-child .tree-item .feature-name { font-size:16px; color:var(--text3); }
     </style>
 </head>
 <body>
     <div class="feature-tree-container">
         <div class="tool-bar">
-            <h2 class="tree-title">开源AI工具 - 全功能特性树</h2>
+            <h2 class="tree-title">MindStudio Operator Tools - 全功能特性树</h2>
             <div class="action-group">
                 <button class="btn" id="expandAll"><i class="fa-solid fa-plus"></i> 全部展开</button>
                 <button class="btn" id="collapseAll"><i class="fa-solid fa-minus"></i> 全部收起</button>

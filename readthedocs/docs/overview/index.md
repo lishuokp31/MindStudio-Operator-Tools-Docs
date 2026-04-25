@@ -1,8 +1,20 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
+# 算子工具全景
+
+## 算子工具链
+
+<!-- yaml_to_html.py脚本在这里插入生成的HTML特性树 -->
+<!-- FEATURE_TREE_START -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>开源AI工具 - 全功能特性树</title>
+    <title>MindStudio Operator Tools - 全功能特性树</title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -191,21 +203,21 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持模板库自动寻优</span>
-                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持搜索空间拓展</span>
-                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持剪枝函数注册</span>
-                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -247,7 +259,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子耗时展示</span>
-                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -303,7 +315,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子名称筛选</span>
-                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -401,7 +413,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">快捷调用</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD 310B / A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD 310B/A3/A5</span></div>
                 </div>
             </li></ul></li></ul></li>
             <li class="tree-node">
@@ -674,7 +686,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Coredump展示寄存器</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -688,7 +700,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Coredump展示内存</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li>
             <li class="tree-node">
@@ -828,14 +840,14 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存非对齐对齐(Device)</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存越界访问检查(Device)</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -863,7 +875,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Api调用错误检查(Host)</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3 / A5</span><span class="version-label v-part">Triton A3 / A5</span><span class="version-label v-part">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -877,14 +889,14 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Malloc GM内存泄露检查（Host）</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">连续buffer访问越界检测（Host/Device)</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -898,7 +910,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存踩踏检测（Device）</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li>
             <li class="tree-node">
@@ -912,21 +924,21 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">流水间竞争检测</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">流水内竞争检测</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">核间竞争检测</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -954,7 +966,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">读未初始化内存（Host）</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -968,7 +980,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">申请但未使用内存检测（Host）</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1045,7 +1057,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持Device异常点堆栈展示</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3 / A5</span><span class="version-label v-part">Triton A3 / A5</span><span class="version-label v-part">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1066,7 +1078,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel名称过滤</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1094,14 +1106,14 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">免编译检测能力使能</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3 / A5</span><span class="version-label v-part">Triton A3 / A5</span><span class="version-label v-part">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">图模式支持</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3 / A5</span><span class="version-label v-part">Triton A3 / A5</span><span class="version-label v-part">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1122,7 +1134,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Memory API，支持用户替换CUDA API配合工具使用（Host）</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1150,7 +1162,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Suballocation API，支持程序向工具上报自规划内存池使用情况</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1206,21 +1218,21 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel级重放</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Application级重放</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Range级重放</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li>
             <li class="tree-node">
@@ -1234,21 +1246,21 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存负载分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">计算负载分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Roofline分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1269,28 +1281,28 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">L2Cache命中统计</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">ICache命中统计</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">资源负载均衡分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">热点指令分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1304,14 +1316,14 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">通算掩盖流水分析</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3 / A5</span><span class="version-label v-part">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">局部PMU数据分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1332,7 +1344,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">自动预热</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1388,7 +1400,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel筛选</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1402,7 +1414,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">任务完成后程序控制</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li>
             <li class="tree-node">
@@ -1465,7 +1477,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持基于TX接口的采集范围控制</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li></ul></li>
             <li class="tree-node">
@@ -1486,7 +1498,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">基于仿真器采集程序性能数据</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B / A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1507,21 +1519,21 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">仿真指令流水图</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B / A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">仿真带宽波形图</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">同步指令配对关联分析</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
@@ -1535,7 +1547,7 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">仿真代码热点分析</span>
-                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3 / A5</span><span class="version-label v-part">Triton A3 / A5</span><span class="version-label v-part">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li>
             <li class="tree-node">
@@ -1549,14 +1561,14 @@
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel筛选</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B / A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li>
             <li class="tree-node">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">任务完成后程序控制</span>
-                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B / A3 / A5</span><span class="version-label v-support">Triton A3 / A5</span><span class="version-label v-support">CATLASS A3 / A5</span></div>
+                    <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
                 </div>
             </li></ul></li></ul></li></ul></li>
         </ul>
@@ -1597,3 +1609,74 @@
     </script>
 </body>
 </html>
+<!-- FEATURE_TREE_END -->
+
+## TODO:工具总览和描述
+
+
+## 相关入口
+
+<div class="grid cards" markdown>
+
+-   **[msOT](../msot/)**
+
+    ---
+
+    算子开发工具链，聚焦算子开发中的关键挑战。
+
+-   **[msKPP](../mskpp/)**
+
+    ---
+
+    性能仿真工具，支持基于算子表达式快速预测其在给定算法实现下的性能上限。
+
+-   **[msOpGen](../msopgen/)**
+
+    ---
+
+    算子工程自动生成工具，支持多种类型工程的快速构建。
+
+-   **[msSanitizer](../mssanitizer/)**
+
+    ---
+
+    算子异常检测工具，提供内存越界、数据竞争、未初始化访问及同步异常四大检测能力。
+
+-   **[msDebug](../msdebug/)**
+
+    ---
+
+    算子调试工具，用于调试在 NPU 侧运行的算子程序，为开发者提供关键调试能力。
+
+-   **[msOpProf](../msopprof/)**
+
+    ---
+
+    算子调优工具，采集与分析运行在昇腾AI处理器上的算子关键性能指标，显著提升性能分析效率。
+
+-   **[msOpTuner](../msoptuner/)**
+
+    ---
+
+    算子Tiling寻优工具，支持基于算子表达式快速预测其在给定算法实现下的性能上限。
+
+-   **[msKL](../mskl/)**
+
+    ---
+
+    算子轻量化调用工具，支持在Python脚本中快速实现Kernel下发代码生成、编译及运行Kernel。
+
+-   **[msOpCom](../msopcom/)**
+
+    ---
+
+    算子工具基础组件，提供算子工具运行所需的桩函数注入、接口劫持等功能。
+
+-   **[msTX](../mstx/)**
+
+    ---
+
+    算子工具扩展接口库，自定义采集时间段或者关键函数的开始和结束时间点，识别关键函数或迭代等信息，对性能和算子问题快速定界。
+
+</div>
+

@@ -1,20 +1,20 @@
 import yaml
 import os
+import re
 from collections import defaultdict
 
 # ===================== 自动获取当前脚本所在目录 =====================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# ===================== 固定后缀列表（只合并这些！） =====================
+# ===================== 固定后缀列表 =====================
 ALLOWED_SUFFIXES = {"A2", "A3", "A5", "310B"}
 
-# ===================== 极简版本合并函数（无正则，硬匹配） =====================
+# ===================== 版本合并函数 =====================
 def merge_version_labels(version_list):
-    groups = defaultdict(list)  # key: 前缀, value: [后缀]
-    part_states = {}  # 记录是否是部分支持
+    groups = defaultdict(list)
+    part_states = {}
     original_items = []
 
-    # 第一步：拆分 前缀 + 后缀
     for v in version_list:
         is_part = ":part" in v
         v_clean = v.split(":")[0].strip()
@@ -23,7 +23,6 @@ def merge_version_labels(version_list):
         if not words:
             continue
 
-        # 最后一段是不是我们允许的后缀？
         suffix = words[-1]
         if suffix in ALLOWED_SUFFIXES:
             prefix = " ".join(words[:-1])
@@ -32,40 +31,46 @@ def merge_version_labels(version_list):
         else:
             original_items.append(v)
 
-    # 第二步：合并同前缀的后缀
     merged = []
     for prefix, suffixes in groups.items():
-        unique_suffixes = sorted(list(set(suffixes)))  # 去重 + 排序
-        combined = " / ".join(unique_suffixes)
+        unique_suffixes = sorted(list(set(suffixes)))
+        combined = "/".join(unique_suffixes)
         full_name = f"{prefix} {combined}"
 
-        # 只要有一个是 part，就标记为 part（你也可以改成只要一个支持就算支持）
         any_part = any(part_states.get(f"{prefix} {s}", False) for s in suffixes)
         if any_part:
             merged.append(f"{full_name}:part")
         else:
             merged.append(full_name)
 
-    # 第三步：合并无法分组的原始项
     merged.extend(original_items)
     return merged
 
-# ===================== 核心工具函数 =====================
+# ===================== 核心函数=====================
 def generate_feature_tree(
     yaml_path: str = "feature_tree.yaml",
     template_path: str = "feature_template.html",
     output_path: str = "feature_tree_final.html",
-    inject_marker: str = "<!-- FEATURE_TREE_INJECT_HERE -->"
+    
+    # 模板里的注入点（单个标签）
+    inject_marker: str = "<!-- FEATURE_TREE_INJECT_HERE -->",
+    
+    # 最终目标文件里的替换区域（双标签）
+    start_marker: str = "<!-- FEATURE_TREE_START -->",
+    end_marker: str = "<!-- FEATURE_TREE_END -->"
 ) -> bool:
     try:
+        # 路径自动基于脚本目录
         yaml_abs = os.path.join(SCRIPT_DIR, yaml_path)
         template_abs = os.path.join(SCRIPT_DIR, template_path)
         output_abs = os.path.join(SCRIPT_DIR, output_path)
 
+        # ==============================================
+        # 步骤 1：读取 YAML → 生成树 HTML
+        # ==============================================
         with open(yaml_abs, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
 
-        # 递归生成节点
         def build_node(item, level=1):
             name = item["name"]
             icon = item.get("icon", "")
@@ -110,15 +115,38 @@ def generate_feature_tree(
         for feat in data["features"]:
             tree_html += build_node(feat)
 
+        # ==============================================
+        # 步骤 2：读取模板 → 把树插入模板的单个标签位置
+        # ==============================================
         with open(template_abs, "r", encoding="utf-8") as f:
             template_content = f.read()
 
-        final_content = template_content.replace(inject_marker, tree_html)
+        # 把生成的树插入模板
+        full_html = template_content.replace(inject_marker, tree_html)
 
+        # ==============================================
+        # 步骤 3：读取目标文件 → 替换双标签之间的内容
+        # ==============================================
+        with open(output_abs, "r", encoding="utf-8") as f:
+            target_content = f.read()
+
+        # 正则匹配：只替换两个标记之间
+        pattern = re.compile(re.escape(start_marker) + r".*?" + re.escape(end_marker), re.DOTALL)
+        final_content = pattern.sub(
+            f"{start_marker}\n{full_html}\n{end_marker}",
+            target_content
+        )
+
+        # ==============================================
+        # 步骤 4：写入最终文件
+        # ==============================================
         with open(output_abs, "w", encoding="utf-8") as f:
             f.write(final_content)
 
-        print("生成完成！")
+        print("生成成功！完整流程执行完毕")
+        print(f"从 {yaml_path} 读取数据")
+        print(f"插入模板 {template_path}")
+        print(f"写入目标文件 {output_path} 标记区域")
         return True
 
     except Exception as e:

@@ -674,9 +674,18 @@ def generate_tool_page(tool: dict) -> None:
 
 
 def main() -> None:
+    from build_examples import generate_examples_page
+
     reset_generated_targets()
     for tool in TOOLS:
         generate_tool_page(tool)
+    generate_examples_page(
+        tools=TOOLS,
+        root=ROOT,
+        docs_root=DOCS_ROOT,
+        repo_web_base_fn=repo_web_base,
+        first_heading_fn=first_heading,
+    )
 
 
 if __name__ == "__main__":

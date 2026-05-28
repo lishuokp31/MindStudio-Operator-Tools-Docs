@@ -4,8 +4,38 @@
   --mstt-accent: rgb(0, 180, 245);
 }
 
+/* 全局正文与标题字号缩放（Material 默认偏大，这里整体缩小约 12%） */
+.md-typeset {
+  font-size: .65rem;
+}
+
+/* 代码块字号与正文保持协调 */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset kbd {
+  font-size: .6rem;
+}
+
 [data-md-color-scheme="default"] {
   --md-typeset-a-color: var(--mstt-primary);
+}
+
+/* ---- 浅色模式：侧边栏与正文用分隔线区分 ---- */
+[data-md-color-scheme="default"] .md-sidebar--primary {
+  border-right: 1px solid #e8e9ed;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--secondary {
+  border-left: 1px solid #e8e9ed;
+}
+
+/* ---- 深色模式：侧边栏与正文用分隔线区分 ---- */
+[data-md-color-scheme="slate"] .md-sidebar--primary {
+  border-right: 1px solid rgba(255, 255, 255, .07);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary {
+  border-left: 1px solid rgba(255, 255, 255, .07);
 }
 
 [data-md-color-scheme="default"] .md-header,

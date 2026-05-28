@@ -62,7 +62,7 @@ python3 -m pip install -r readthedocs/requirements.txt
 执行命令：
 
 ```bash
-python3 readthedocs/scripts/build_docs.py
+python readthedocs/scripts/build_docs.py
 ```
 
 然后启动本地服务：
@@ -72,7 +72,7 @@ mkdocs serve -f readthedocs/mkdocs.yml -a 127.0.0.1:8000
 ```
 如是是windows环境，请使用：
 ```bash
-python3 -m mkdocs serve -f readthedocs/mkdocs.yml -a 127.0.0.1:8000
+python -m mkdocs serve -f readthedocs/mkdocs.yml -a 127.0.0.1:8000
 ```
 
 启动后浏览器访问：

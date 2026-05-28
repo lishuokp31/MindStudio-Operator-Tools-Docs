@@ -392,6 +392,14 @@ features:
         - AscendC SIMD A3:part(60%)
         - Triton A3:part(60%)
         - CATLASS A3:part(60%)
+      - name: 算子卡死检测
+        version:
+        - AscendC SIMD A3
+        - AscendC SIMD A5
+        - Triton A3
+        - Triton A5
+        - CATLASS A3
+        - CATLASS A5
     - name: Overflowcheck（溢出检测）
       icon: list-check
       children:

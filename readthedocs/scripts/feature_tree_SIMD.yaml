@@ -393,6 +393,7 @@ features:
         - Triton A3:part(60%)
         - CATLASS A3:part(60%)
       - name: 算子卡死检测
+        example_link: "../examples/mssanitizer/syncccheck/stuck_check/"
         version:
         - AscendC SIMD A3
         - AscendC SIMD A5

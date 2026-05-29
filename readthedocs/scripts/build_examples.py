@@ -41,6 +41,11 @@ def generate_examples_page(
     first_heading_fn : (Path) -> str
         读取 Markdown 文件的首个标题。
     """
+    # ---- 先清理旧生成内容（无论有无新样例） ----
+    examples_docs_root = docs_root / "examples"
+    if examples_docs_root.exists():
+        shutil.rmtree(examples_docs_root)
+
     examples_source = root / "examples"
     if not examples_source.is_dir():
         print("[examples] examples 目录不存在，跳过生成。")
@@ -65,10 +70,6 @@ def generate_examples_page(
         print("[examples] 未发现任何样例，跳过生成。")
         return
 
-    # 清理旧生成内容
-    examples_docs_root = docs_root / "examples"
-    if examples_docs_root.exists():
-        shutil.rmtree(examples_docs_root)
     examples_docs_root.mkdir(parents=True, exist_ok=True)
 
     # ---- 逐工具、逐分类、逐样例生成页面 ----

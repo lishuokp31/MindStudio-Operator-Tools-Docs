@@ -99,6 +99,30 @@
     .tree-root>.tree-node:nth-child(3)>.tree-child>.tree-node>.tree-item .feature-name { color:var(--ft-color3); }
     .tree-child .tree-child .tree-item .feature-name { font-size:17px; color:var(--ft-text2); }
     .tree-child .tree-child .tree-child .tree-item .feature-name { font-size:16px; color:var(--ft-text3); }
+
+    /* 样例跳转按钮 —— 高亮醒目，与版本标签彻底区分 */
+    .ft-example-btn {
+        display:inline-flex; align-items:center; gap:4px;
+        padding:4px 14px; margin-left:12px;
+        font-size:12px; font-weight:700;
+        color:#fff; background:linear-gradient(135deg, #7c3aed, #a855f7);
+        border:none; border-radius:14px;
+        text-decoration:none; white-space:nowrap;
+        flex-shrink:0;
+        box-shadow:0 2px 6px rgba(124,58,237,.4);
+        transition:transform .15s, box-shadow .15s;
+    }
+    .ft-example-btn:hover {
+        transform:translateY(-2px);
+        box-shadow:0 4px 14px rgba(124,58,237,.55);
+        color:#fff;
+    }
+    [data-theme="dark"] .ft-example-btn {
+        box-shadow:0 2px 6px rgba(168,85,247,.35);
+    }
+    [data-theme="dark"] .ft-example-btn:hover {
+        box-shadow:0 4px 14px rgba(168,85,247,.5);
+    }
 </style>
 
 <div class="feature-tree-container">
@@ -117,36 +141,132 @@
 </div>
 
 <script>
-    document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(btn=>{
-        btn.addEventListener('click',e=>{
-            e.stopPropagation()
-            const child = btn.closest('.tree-item').nextElementSibling;
-            if(!child) return;
-            const hide = child.style.display === 'none';
-            child.style.display = hide ? 'block' : 'none';
-            btn.classList.toggle('collapsed',!hide);
-            btn.classList.toggle('expanded',hide);
-        })
-    })
-    document.getElementById('expandAll').onclick=()=>{
-        document.querySelectorAll('.feature-tree-wrapper .tree-child').forEach(c=>c.style.display='block');
-        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(b=>{b.className='toggle-btn expanded'});
+(function() {
+    var FT_STORAGE_KEY = 'ft-expanded';
+
+    function getExpandedSet() {
+        try {
+            var raw = sessionStorage.getItem(FT_STORAGE_KEY);
+            return raw ? new Set(JSON.parse(raw)) : new Set();
+        } catch (_) { return new Set(); }
     }
-    document.getElementById('collapseAll').onclick=()=>{
-        document.querySelectorAll('.feature-tree-wrapper .tree-child').forEach(c=>c.style.display='none');
-        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(b=>{
-            if(!b.classList.contains('no-toggle')) b.className='toggle-btn collapsed';
-        })
+
+    function saveExpandedSet(s) {
+        sessionStorage.setItem(FT_STORAGE_KEY, JSON.stringify(Array.from(s)));
     }
-    document.getElementById('toggleDark').onclick=()=>{
-        const isDark = document.documentElement.dataset.theme === 'dark';
-        if(isDark) {
-            document.documentElement.removeAttribute('data-theme');
-            this.innerHTML='<i class="fa-solid fa-moon"></i> 暗黑模式';
-        }else{
-            document.documentElement.dataset.theme='dark';
-            this.innerHTML='<i class="fa-solid fa-sun"></i> 明亮模式';
+
+    function applyNode(btn, hide) {
+        var child = btn.closest('.tree-item');
+        if (!child) return;
+        child = child.nextElementSibling;
+        if (!child) return;
+        child.style.display = hide ? 'none' : 'block';
+        btn.classList.toggle('collapsed', hide);
+        btn.classList.toggle('expanded', !hide);
+    }
+
+    function getPath(btn) {
+        var node = btn.closest('.tree-node');
+        return node ? node.dataset.ftPath : '';
+    }
+
+    function isLevel1(path) {
+        return path.indexOf('-') === -1;
+    }
+
+    // ---- 恢复树状态（每次导航回来都会调用） ----
+    function restoreTreeState() {
+        var expanded = getExpandedSet();
+        var btns = document.querySelectorAll('.feature-tree-wrapper .toggle-btn');
+        if (!btns.length) return;
+
+        if (expanded.size === 0) {
+            btns.forEach(function(btn) {
+                if (btn.classList.contains('no-toggle')) return;
+                var path = getPath(btn);
+                if (isLevel1(path)) expanded.add(path);
+            });
+            saveExpandedSet(expanded);
         }
+
+        btns.forEach(function(btn) {
+            if (btn.classList.contains('no-toggle')) return;
+            applyNode(btn, !expanded.has(getPath(btn)));
+        });
     }
+
+    function handleToggle(btn) {
+        var child = btn.closest('.tree-item');
+        if (!child) return;
+        child = child.nextElementSibling;
+        if (!child) return;
+        var hide = child.style.display !== 'none';
+        applyNode(btn, hide);
+        var expanded = getExpandedSet();
+        var path = getPath(btn);
+        if (hide) expanded.delete(path); else expanded.add(path);
+        saveExpandedSet(expanded);
+    }
+
+    function expandAll() {
+        var expanded = new Set();
+        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(function(btn) {
+            if (btn.classList.contains('no-toggle')) return;
+            applyNode(btn, false);
+            expanded.add(getPath(btn));
+        });
+        saveExpandedSet(expanded);
+    }
+
+    function collapseAll() {
+        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(function(btn) {
+            if (btn.classList.contains('no-toggle')) return;
+            applyNode(btn, true);
+        });
+        saveExpandedSet(new Set());
+    }
+
+    // ---- 事件委托：只绑定一次（window 标记防重复） ----
+    if (!window.__ftListening) {
+        window.__ftListening = true;
+        document.addEventListener('click', function(e) {
+            var row = e.target.closest('.feature-tree-wrapper .tree-item');
+            if (row && !e.target.closest('a, button')) {
+                var btn = row.querySelector('.toggle-btn');
+                if (btn && !btn.classList.contains('no-toggle')) {
+                    e.stopPropagation();
+                    handleToggle(btn);
+                    return;
+                }
+            }
+            if (e.target.closest('#expandAll')) { expandAll(); return; }
+            if (e.target.closest('#collapseAll')) { collapseAll(); return; }
+            if (e.target.closest('#toggleDark')) {
+                var isDark = document.documentElement.dataset.theme === 'dark';
+                if (isDark) {
+                    document.documentElement.removeAttribute('data-theme');
+                    e.target.closest('#toggleDark').innerHTML = '<i class="fa-solid fa-moon"></i> 暗黑模式';
+                } else {
+                    document.documentElement.dataset.theme = 'dark';
+                    e.target.closest('#toggleDark').innerHTML = '<i class="fa-solid fa-sun"></i> 明亮模式';
+                }
+            }
+        });
+    }
+
+    // ---- MkDocs Material instant navigation：订阅一次 ----
+    if (!window.__ftSubscribed && typeof document$ !== 'undefined') {
+        window.__ftSubscribed = true;
+        document$.subscribe(function() {
+            // 延迟一帧确保 DOM 已就绪
+            requestAnimationFrame(function() {
+                restoreTreeState();
+            });
+        });
+    }
+
+    // ---- 每次脚本执行都恢复状态（首次加载 & instant 返回均触发） ----
+    restoreTreeState();
+})();
 </script>
 </div>

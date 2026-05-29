@@ -71,7 +71,7 @@ def generate_feature_tree(
         with open(yaml_abs, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
 
-        def build_node(item, level=1):
+        def build_node(item, level=1, path="0"):
             name = item["name"]
             icon = item.get("icon", "")
             children = item.get("children", [])
@@ -79,6 +79,11 @@ def generate_feature_tree(
 
             icon_html = f'<i class="fa-solid fa-{icon} icon"></i>' if icon else ""
             ver_html = ""
+
+            # 样例跳转链接
+            example_html = ""
+            if "example_link" in item:
+                example_html = f'<a class="ft-example-btn" href="{item["example_link"]}" title="查看样例">📦 跳转到样例</a>'
 
             if level == 4 and "version" in item:
                 merged = merge_version_labels(item["version"])
@@ -91,29 +96,31 @@ def generate_feature_tree(
                     cls = "v-part" if state == "part" else "v-support"
                     ver_html += f'<span class="version-label {cls}">{v_name}</span>'
 
+            # 默认仅第一层展开，其余收起
             toggle_cls = "expanded" if (level == 1 and has_child) else "collapsed"
             toggle_no = "no-toggle" if not has_child else ""
             display = "display: none;" if not (level == 1 and has_child) else ""
 
             html = f"""
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="{path}">
                 <div class="tree-item">
                     <span class="toggle-btn {toggle_cls} {toggle_no}"></span>
                     <span class="feature-name">{icon_html}{name}</span>
                     <div class="feature-versions">{ver_html}</div>
+                    {example_html}
                 </div>
             """
             if has_child:
                 html += f'<ul class="tree-child" style="{display}">'
-                for child in children:
-                    html += build_node(child, level + 1)
+                for i, child in enumerate(children):
+                    html += build_node(child, level + 1, f"{path}-{i}")
                 html += "</ul>"
             html += "</li>"
             return html
 
         tree_html = ""
-        for feat in data["features"]:
-            tree_html += build_node(feat)
+        for i, feat in enumerate(data["features"]):
+            tree_html += build_node(feat, path=str(i))
 
         # ==============================================
         # 步骤 2：读取模板 → 把树插入模板的单个标签位置

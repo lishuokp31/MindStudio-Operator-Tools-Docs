@@ -111,6 +111,30 @@ hide:
     .tree-root>.tree-node:nth-child(3)>.tree-child>.tree-node>.tree-item .feature-name { color:var(--ft-color3); }
     .tree-child .tree-child .tree-item .feature-name { font-size:17px; color:var(--ft-text2); }
     .tree-child .tree-child .tree-child .tree-item .feature-name { font-size:16px; color:var(--ft-text3); }
+
+    /* 样例跳转按钮 —— 高亮醒目，与版本标签彻底区分 */
+    .ft-example-btn {
+        display:inline-flex; align-items:center; gap:4px;
+        padding:4px 14px; margin-left:12px;
+        font-size:12px; font-weight:700;
+        color:#fff; background:linear-gradient(135deg, #7c3aed, #a855f7);
+        border:none; border-radius:14px;
+        text-decoration:none; white-space:nowrap;
+        flex-shrink:0;
+        box-shadow:0 2px 6px rgba(124,58,237,.4);
+        transition:transform .15s, box-shadow .15s;
+    }
+    .ft-example-btn:hover {
+        transform:translateY(-2px);
+        box-shadow:0 4px 14px rgba(124,58,237,.55);
+        color:#fff;
+    }
+    [data-theme="dark"] .ft-example-btn {
+        box-shadow:0 2px 6px rgba(168,85,247,.35);
+    }
+    [data-theme="dark"] .ft-example-btn:hover {
+        box-shadow:0 4px 14px rgba(168,85,247,.5);
+    }
 </style>
 
 <div class="feature-tree-container">
@@ -125,1483 +149,1785 @@ hide:
 
     <ul class="tree-root">
         
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0">
                 <div class="tree-item">
                     <span class="toggle-btn expanded "></span>
                     <span class="feature-name"><i class="fa-solid fa-cogs icon"></i>算子设计</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>精度设计</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>精度设计</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-0-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">精度设计</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>理论性能建模</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>理论性能建模</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-1-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">理论性能建模</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>模板库自动寻优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>自动寻优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持模板库自动寻优</span>
                     <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持搜索空间拓展</span>
                     <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持剪枝函数注册</span>
                     <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持模板库接入</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">基于建模的寻优过程自动剪枝</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">基于多个case的综合寻优策略</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-0-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">基于JIT的编译效率提升</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>性能分析</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子耗时展示</span>
                     <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算力使用情况展示</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">带宽展示</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持与加速库进行性能比对</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">指导搜索空间拓展优化</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>精度比对</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持与加速库进行结果精度比对</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>辅助特性</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-3-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子名称筛选</span>
                     <div class="feature-versions"><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-3-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">L2Cache控制</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-3-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">预热控制</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-3-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">执行模式控制（图模式、单算子模式）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="0-2-3-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">数据生成控制（分布策略）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1">
                 <div class="tree-item">
                     <span class="toggle-btn expanded "></span>
                     <span class="feature-name"><i class="fa-solid fa-cogs icon"></i>算子开发</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>算子迁移</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>算子迁移</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-0-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子迁移</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>辅助编码</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>辅助编码</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-1-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">辅助编码</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>快捷调用</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>快捷调用</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-2-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">快捷调用</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD 310B/A3/A5</span></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>精度验证</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-3-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>精度验证</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-3-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">精度验证</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>功能验证</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-4-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>功能验证</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="1-4-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">功能验证</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="2">
                 <div class="tree-item">
                     <span class="toggle-btn expanded "></span>
                     <span class="feature-name"><i class="fa-solid fa-cogs icon"></i>算子测试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>精度测试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="2-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>精度测试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="2-0-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">精度测试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3">
                 <div class="tree-item">
                     <span class="toggle-btn expanded "></span>
                     <span class="feature-name"><i class="fa-solid fa-cogs icon"></i>算子调试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>在板调试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>断点设置</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">普通断点</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">条件断点</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">地址断点</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3</span><span class="version-label v-part">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-0-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel入口断点</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>程序执行控制</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Continue</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">SingleStep</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">StepOver</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">StepIn</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">StepOut</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-1-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">CTRL_C</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3</span><span class="version-label v-part">CATLASS A3</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>上下文切换</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">设备内上下文切换（核切换）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-2-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">设备切换</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3</span><span class="version-label v-part">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-2-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">寄存器查询</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-2-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">上下文信息查询（核id等）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-2-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">常量区域查询</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>内存访问</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">变量读</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">变量写</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存读</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存写</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Host程序侧读Device内存</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-3-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Host程序侧写Device内存</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>Coredump解析</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-4-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Coredump展示寄存器</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-4-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Coredump展示调用栈</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">Triton A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-4-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Coredump展示内存</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>辅助特性</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持attach进程方式调试</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">自动捕获并检查Host API错误码</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">自动捕获并检查硬件错误信息</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">自动单步执行定位异常代码</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">图模式支持(单流)</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">图模式支持(多流)</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-5-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Host程序调试能力</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>开放接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Initialzation API:初始化调试模式的API</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Device Execution Control API:控制硬件继续运行与单步执行</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Breakpoints API:控制断点的设置取消</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Device State Inspection API:查询Device上的内存等信息</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Device State Alteration API:用于修改Device上的内存等信息</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Properties API:硬件/程序属性查询</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">DWARF Utilities API: DWARF工具封装API</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-0-6-7">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Events: 标识硬件上报的各种事件</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>异常检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>Memcheck（内存检测）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存非对齐对齐(Device)</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存越界访问检查(Device)</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">硬件异常上报(Device)</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">非法malloc/free使用检查（Device）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Device malloc泄漏检查（Device）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Api调用错误检查(Host)</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Api调用错误检查(Device)</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-7">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Malloc GM内存泄露检查（Host）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-8">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">连续buffer访问越界检测（Host/Device)</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-9">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Stream间竞争检测（Host）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-0-10">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存踩踏检测（Device）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>Racecheck（竞争检测）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">流水间竞争检测</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">流水内竞争检测</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">核间竞争检测</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">cluster间共享内存竞争检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">卡间共享内存竞争检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>Initcheck（初始化检测）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">读未初始化内存（Host）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-2-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">读未初始化内存（Device）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">Triton A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-2-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">申请但未使用内存检测（Host）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-2-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">申请但未使用内存检测（Device）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">Triton A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>Synccheck（同步检测）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-3-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">同步语义死锁检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-3-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">同步语义使用错误检测（入参、调用位置等）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-3-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">同步语义配对/冗余检测</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3</span><span class="version-label v-part">Triton A3</span><span class="version-label v-part">CATLASS A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-3-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子卡死检测</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    <a class="ft-example-btn" href="../examples/mssanitizer/syncccheck/stuck_check/" title="查看样例">📦 跳转到样例</a>
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>Overflowcheck（溢出检测）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-4-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">数值计算溢出检测（Device）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>辅助特性</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持控制并发or串行检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持Host异常点堆栈展示</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持Device异常点堆栈展示</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持GPU动态并行任务的异常检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持程序结束时寄存器状态检测</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel名称过滤</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">异常时可以生成core文件，用于调试器分析</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-7">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">识别到异常时动作（终止执行，继续执行）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-8">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">误报抑制文件控制误报情况</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-9">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">免编译检测能力使能</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-10">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">图模式支持</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-5-11">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持进程attach方式检测</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>开放接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-6-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Memory API，支持用户替换CUDA API配合工具使用（Host）</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-6-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Callback API，支持用户在CUDA API上注册自己的回调（Host）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-6-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Patching API，支持用户在Kernel内存操作上注册回调（Device）</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-7">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>TX拓展接口支持</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-7-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Suballocation API，支持程序向工具上报自规划内存池使用情况</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-7-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Naming API，支持对分配的内存进行标记</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-7-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Permissions API，支持对内存设置可读写属性</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-7-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Mark Initialized API，支持标记内存的初始化状态</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="3-1-7-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel侧TX能力支持</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">Triton A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li></ul></li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4">
                 <div class="tree-item">
                     <span class="toggle-btn expanded "></span>
                     <span class="feature-name"><i class="fa-solid fa-cogs icon"></i>算子调优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>在板调优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>采集方式</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel级重放</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Application级重放</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Range级重放</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>采集指标</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">内存负载分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">计算负载分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Roofline分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">通信拓扑分析</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">PMU采样分析</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">L2Cache命中统计</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">ICache命中统计</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-7">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">资源负载均衡分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-8">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">热点指令分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-9">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">算子流水轨迹分析</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A5</span><span class="version-label v-part">Triton A5</span><span class="version-label v-part">CATLASS A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-10">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">通算掩盖流水分析</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-11">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">局部PMU数据分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-1-12">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">L2Cache热点建模分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">Triton A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>辅助特性</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">自动预热</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Cache控制</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">交互式调优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">频率控制</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">性能报告比对</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Attach进程调优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-6">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">图模式支持</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-7">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">调优报告评论</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-8">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel筛选</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-9">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">CPU调用栈</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-2-10">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">任务完成后程序控制</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>开放接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">CUPTI采集控制接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Profiling报告解析接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">专家建议注册接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">可视化页面配置接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">资源利用率预测接口</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-3-5">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">python调优框架</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>TX拓展接口支持</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-0-4-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">支持基于TX接口的采集范围控制</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-folder-open icon"></i>仿真调优</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>采集方式</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-0-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">基于仿真器采集程序性能数据</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-0-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">上板执行过程中仿真局部算子</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3</span><span class="version-label v-support">Triton A3</span><span class="version-label v-support">CATLASS A3</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>采集指标</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-1-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">仿真指令流水图</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-1-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">仿真带宽波形图</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">同步指令配对关联分析</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-1-3">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Scalar头开销展示</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-1-4">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">仿真代码热点分析</span>
                     <div class="feature-versions"><span class="version-label v-part">AscendC SIMD A3/A5</span><span class="version-label v-part">Triton A3/A5</span><span class="version-label v-part">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-2">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed "></span>
                     <span class="feature-name"><i class="fa-solid fa-list-check icon"></i>辅助特性</span>
                     <div class="feature-versions"></div>
+                    
                 </div>
             <ul class="tree-child" style="display: none;">
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-2-0">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">Kernel筛选</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li>
-            <li class="tree-node">
+            <li class="tree-node" data-ft-path="4-1-2-1">
                 <div class="tree-item">
                     <span class="toggle-btn collapsed no-toggle"></span>
                     <span class="feature-name">任务完成后程序控制</span>
                     <div class="feature-versions"><span class="version-label v-support">AscendC SIMD 310B/A3/A5</span><span class="version-label v-support">Triton A3/A5</span><span class="version-label v-support">CATLASS A3/A5</span></div>
+                    
                 </div>
             </li></ul></li></ul></li></ul></li>
     </ul>
 </div>
 
 <script>
-    document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(btn=>{
-        btn.addEventListener('click',e=>{
-            e.stopPropagation()
-            const child = btn.closest('.tree-item').nextElementSibling;
-            if(!child) return;
-            const hide = child.style.display === 'none';
-            child.style.display = hide ? 'block' : 'none';
-            btn.classList.toggle('collapsed',!hide);
-            btn.classList.toggle('expanded',hide);
-        })
-    })
-    document.getElementById('expandAll').onclick=()=>{
-        document.querySelectorAll('.feature-tree-wrapper .tree-child').forEach(c=>c.style.display='block');
-        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(b=>{b.className='toggle-btn expanded'});
+(function() {
+    var FT_STORAGE_KEY = 'ft-expanded';
+
+    function getExpandedSet() {
+        try {
+            var raw = sessionStorage.getItem(FT_STORAGE_KEY);
+            return raw ? new Set(JSON.parse(raw)) : new Set();
+        } catch (_) { return new Set(); }
     }
-    document.getElementById('collapseAll').onclick=()=>{
-        document.querySelectorAll('.feature-tree-wrapper .tree-child').forEach(c=>c.style.display='none');
-        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(b=>{
-            if(!b.classList.contains('no-toggle')) b.className='toggle-btn collapsed';
-        })
+
+    function saveExpandedSet(s) {
+        sessionStorage.setItem(FT_STORAGE_KEY, JSON.stringify(Array.from(s)));
     }
-    document.getElementById('toggleDark').onclick=()=>{
-        const isDark = document.documentElement.dataset.theme === 'dark';
-        if(isDark) {
-            document.documentElement.removeAttribute('data-theme');
-            this.innerHTML='<i class="fa-solid fa-moon"></i> 暗黑模式';
-        }else{
-            document.documentElement.dataset.theme='dark';
-            this.innerHTML='<i class="fa-solid fa-sun"></i> 明亮模式';
+
+    function applyNode(btn, hide) {
+        var child = btn.closest('.tree-item');
+        if (!child) return;
+        child = child.nextElementSibling;
+        if (!child) return;
+        child.style.display = hide ? 'none' : 'block';
+        btn.classList.toggle('collapsed', hide);
+        btn.classList.toggle('expanded', !hide);
+    }
+
+    function getPath(btn) {
+        var node = btn.closest('.tree-node');
+        return node ? node.dataset.ftPath : '';
+    }
+
+    function isLevel1(path) {
+        return path.indexOf('-') === -1;
+    }
+
+    // ---- 恢复树状态（每次导航回来都会调用） ----
+    function restoreTreeState() {
+        var expanded = getExpandedSet();
+        var btns = document.querySelectorAll('.feature-tree-wrapper .toggle-btn');
+        if (!btns.length) return;
+
+        if (expanded.size === 0) {
+            btns.forEach(function(btn) {
+                if (btn.classList.contains('no-toggle')) return;
+                var path = getPath(btn);
+                if (isLevel1(path)) expanded.add(path);
+            });
+            saveExpandedSet(expanded);
         }
+
+        btns.forEach(function(btn) {
+            if (btn.classList.contains('no-toggle')) return;
+            applyNode(btn, !expanded.has(getPath(btn)));
+        });
     }
+
+    function handleToggle(btn) {
+        var child = btn.closest('.tree-item');
+        if (!child) return;
+        child = child.nextElementSibling;
+        if (!child) return;
+        var hide = child.style.display !== 'none';
+        applyNode(btn, hide);
+        var expanded = getExpandedSet();
+        var path = getPath(btn);
+        if (hide) expanded.delete(path); else expanded.add(path);
+        saveExpandedSet(expanded);
+    }
+
+    function expandAll() {
+        var expanded = new Set();
+        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(function(btn) {
+            if (btn.classList.contains('no-toggle')) return;
+            applyNode(btn, false);
+            expanded.add(getPath(btn));
+        });
+        saveExpandedSet(expanded);
+    }
+
+    function collapseAll() {
+        document.querySelectorAll('.feature-tree-wrapper .toggle-btn').forEach(function(btn) {
+            if (btn.classList.contains('no-toggle')) return;
+            applyNode(btn, true);
+        });
+        saveExpandedSet(new Set());
+    }
+
+    // ---- 事件委托：只绑定一次（window 标记防重复） ----
+    if (!window.__ftListening) {
+        window.__ftListening = true;
+        document.addEventListener('click', function(e) {
+            var row = e.target.closest('.feature-tree-wrapper .tree-item');
+            if (row && !e.target.closest('a, button')) {
+                var btn = row.querySelector('.toggle-btn');
+                if (btn && !btn.classList.contains('no-toggle')) {
+                    e.stopPropagation();
+                    handleToggle(btn);
+                    return;
+                }
+            }
+            if (e.target.closest('#expandAll')) { expandAll(); return; }
+            if (e.target.closest('#collapseAll')) { collapseAll(); return; }
+            if (e.target.closest('#toggleDark')) {
+                var isDark = document.documentElement.dataset.theme === 'dark';
+                if (isDark) {
+                    document.documentElement.removeAttribute('data-theme');
+                    e.target.closest('#toggleDark').innerHTML = '<i class="fa-solid fa-moon"></i> 暗黑模式';
+                } else {
+                    document.documentElement.dataset.theme = 'dark';
+                    e.target.closest('#toggleDark').innerHTML = '<i class="fa-solid fa-sun"></i> 明亮模式';
+                }
+            }
+        });
+    }
+
+    // ---- MkDocs Material instant navigation：订阅一次 ----
+    if (!window.__ftSubscribed && typeof document$ !== 'undefined') {
+        window.__ftSubscribed = true;
+        document$.subscribe(function() {
+            // 延迟一帧确保 DOM 已就绪
+            requestAnimationFrame(function() {
+                restoreTreeState();
+            });
+        });
+    }
+
+    // ---- 每次脚本执行都恢复状态（首次加载 & instant 返回均触发） ----
+    restoreTreeState();
+})();
 </script>
 </div>
 <!-- FEATURE_TREE_END -->

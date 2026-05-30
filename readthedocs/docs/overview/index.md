@@ -1932,7 +1932,29 @@ hide:
 </div>
 <!-- FEATURE_TREE_END -->
 
-## TODO:工具总览和描述
+## 🆕 MindStudio 26.0.0 新增功能特性
+
+### 🔍 [msSanitizer](../mssanitizer/) — 算子异常检测
+
+- 支持 AscendC 单目、双目计算类以及搬运类 API 中 LocalTensor 的越界检测
+- 支持 SIMT 和 Main-Scalar 流水间的内存踩踏检测
+- 支持 SIMTR VF 内线程间竞争检测
+- 支持冗余 `SET_FLAG` 指令检测
+- 支持关键控制寄存器默认值检测
+- 支持 shmem 算子库、asc 算子库异常检测
+
+### 🐛 [msDebug](../msdebug/) — 算子调试
+
+- 支持 shmem 算子库在板调试
+- 支持 asc 算子库的 coredump 调试与上板调试
+
+### 📊 [msOpProf](../msopprof/) — 算子调优
+
+- 支持 shmem 算子库、asc 算子库的性能调优
+- 支持自定义通算融合框架的性能分析能力，可通过 AscendC API 打点生成通算流水图
+- 支持 Scalar 性能数据精细化分析，可指导判断 Scalar 单元具体耗时阻塞位置，性能数据文件及计算内存热力图-内存负载分析中拓展相关性能指标
+- 支持 SIMT VF 指令 Stall 分析与寄存器利用率展示，上板代码热点图中拓展相关性能指标
+- 支持 SIMT VF 指令发射效率指标统计及负载均衡分析，计算内存热力图-核间负载分析中拓展相关性能指标
 
 
 ## 相关入口

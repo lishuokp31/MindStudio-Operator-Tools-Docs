@@ -64,8 +64,8 @@ features:
         - CATLASS A5
       - name: L2Cache控制
       - name: 预热控制
-      - name: 执行模式控制（图模式、单算子模式）
-      - name: 数据生成控制（分布策略）
+      - name: 执行模式控制(图模式、单算子模式)
+      - name: 数据生成控制(分布策略)
 - name: 开发
   icon: cogs
   children:
@@ -141,7 +141,7 @@ features:
     - name: 上下文切换
       icon: list-check
       children:
-      - name: 设备内上下文切换（核、线程切换）
+      - name: 设备内上下文切换(核、线程切换)
       - name: 设备切换
     - name: 上下文查询
       icon: list-check
@@ -151,7 +151,7 @@ features:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-      - name: 上下文信息查询（核id、线程id等）
+      - name: 上下文信息查询(核id、线程id等)
       - name: 常量区域查询
         version:
         - AscendC SIMT A5
@@ -195,7 +195,7 @@ features:
   - name: 异常检测
     icon: folder-open
     children:
-    - name: Memcheck（内存检测）
+    - name: Memcheck(内存检测)
       icon: list-check
       children:
       - name: 内存非对齐检查(Device)
@@ -209,31 +209,37 @@ features:
         - Triton A5
         - CATLASS A5
       - name: 硬件异常上报(Device)
-      - name: 非法malloc/free使用检查（Device）
-      - name: Device malloc泄漏检查（Device）
+      - name: 非法malloc/free使用检查(Device)
+      - name: Device malloc泄漏检查(Device)
       - name: Api调用错误检查(Host)
         version:
         - AscendC SIMT A5:part(50%)
         - Triton A5:part(50%)
         - CATLASS A5:part(50%)
       - name: Api调用错误检查(Device)
-      - name: Malloc GM内存泄露检查（Host）
+      - name: Malloc GM内存泄露检查(Host)
         version:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-      - name: 连续buffer访问越界检测（Host/Device)
+      - name: 连续buffer访问越界检测(Host/Device)
         version:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-      - name: Stream间竞争检测（Host）
-      - name: 线程间内存踩踏检测（Device）
+      - name: Stream间竞争检测(Host)
+      - name: 线程间内存踩踏检测(Device)
         version:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-    - name: Racecheck（竞争检测）
+      - name: SIMT VF核间内存踩踏检测(26.0.0)
+        version:
+        - AscendC SIMT A5
+      - name: SIMT VF线程间竞争检测(26.0.0)
+        version:
+        - AscendC SIMT A5
+    - name: Racecheck(竞争检测)
       icon: list-check
       children:
       - name: 线程间竞争检测
@@ -242,31 +248,34 @@ features:
         - Triton A5
         - CATLASS A5
       - name: cluster间共享内存竞争检测
-    - name: Initcheck（初始化检测）
+    - name: Initcheck(初始化检测)
       icon: list-check
       children:
-      - name: GM内存申请后未初始化使用（Host）
+      - name: GM内存申请后未初始化使用(Host)
         version:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-      - name: GM内存申请后未初始化使用（Device）
-      - name: 申请但未使用内存检测（Host）
+      - name: GM内存申请后未初始化使用(Device)
+      - name: 申请但未使用内存检测(Host)
         version:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-      - name: 申请但未使用内存检测（Device）
-    - name: Synccheck（同步检测）
+      - name: 申请但未使用内存检测(Device)
+      - name: SIMT 和 Main-Scalar 流水间的竞争检测
+        version:
+        - AscendC SIMT A5
+    - name: Synccheck(同步检测)
       icon: list-check
       children:
       - name: 同步语义死锁检测
-      - name: 同步语义使用错误检测（入参、调用位置等）
+      - name: 同步语义使用错误检测(入参、调用位置等)
       - name: 同步语义配对/冗余检测
-    - name: Overflowcheck（溢出检测）
+    - name: Overflowcheck(溢出检测)
       icon: list-check
       children:
-      - name: 数值计算溢出检测（Device）
+      - name: 数值计算溢出检测(Device)
     - name: 辅助特性
       icon: list-check
       children:
@@ -284,7 +293,7 @@ features:
         - Triton A5
         - CATLASS A5
       - name: 异常时可以生成core文件，用于调试器分析
-      - name: 识别到异常时动作（终止执行，继续执行）
+      - name: 识别到异常时动作(终止执行，继续执行)
       - name: 误报抑制文件控制误报情况
       - name: 免编译检测能力使能
         version:
@@ -300,13 +309,13 @@ features:
     - name: 开放接口
       icon: list-check
       children:
-      - name: Memory API，支持用户替换CUDA API配合工具使用（Host）
+      - name: Memory API，支持用户替换CUDA API配合工具使用(Host)
         version:
         - AscendC SIMT A5
         - Triton A5
         - CATLASS A5
-      - name: Callback API，支持用户在CUDA API上注册自己的回调（Host）
-      - name: Patching API，支持用户在Kernel内存操作上注册回调（Device）
+      - name: Callback API，支持用户在CUDA API上注册自己的回调(Host)
+      - name: Patching API，支持用户在Kernel内存操作上注册回调(Device)
     - name: TX拓展接口支持
       icon: list-check
       children:
@@ -397,6 +406,9 @@ features:
         - Triton A5
         - CATLASS A5
       - name: Warp调度分析
+      - name: SIMT VF下的指令发射效率统计(26.0.0)
+        version:
+        - AscendC SIMT A5
     - name: 辅助特性
       icon: list-check
       children:

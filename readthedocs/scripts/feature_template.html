@@ -12,7 +12,7 @@
         box-sizing:border-box;
         transition: color 0.3s, background 0.3s, border-color 0.3s;
     }
-    [data-theme="dark"] .feature-tree-wrapper {
+    .feature-tree-wrapper[data-theme="dark"] {
         --ft-bg:#121212; --ft-card:#1e1e1e; --ft-title:#f9fafb; --ft-text1:#f3f4f6; --ft-text2:#e5e7eb; --ft-text3:#d1d5db;
         --ft-border:#333; --ft-line:#444; --ft-hover:#2d2d2d;
     }
@@ -46,8 +46,8 @@
     }
     .v-support { background:#ecfdf5; color:#067f4d; border:1px solid #a7f3d0; }
     .v-part { background:#fffbeb; color:#d97706; border:1px solid #fcd34d; }
-    [data-theme="dark"] .v-support { background:#064e3b; color:#a7f3d0; }
-    [data-theme="dark"] .v-part { background:#78350f; color:#fcd34d; }
+    .feature-tree-wrapper[data-theme="dark"] .v-support { background:#064e3b; color:#a7f3d0; }
+    .feature-tree-wrapper[data-theme="dark"] .v-part { background:#78350f; color:#fcd34d; }
 
     /* 缩进缩小到 2/3：24px → 16px */
     .tree-node { list-style:none; padding-left:16px; position:relative; }
@@ -117,10 +117,10 @@
         box-shadow:0 4px 14px rgba(124,58,237,.55);
         color:#fff;
     }
-    [data-theme="dark"] .ft-example-btn {
+    .feature-tree-wrapper[data-theme="dark"] .ft-example-btn {
         box-shadow:0 2px 6px rgba(168,85,247,.35);
     }
-    [data-theme="dark"] .ft-example-btn:hover {
+    .feature-tree-wrapper[data-theme="dark"] .ft-example-btn:hover {
         box-shadow:0 4px 14px rgba(168,85,247,.5);
     }
 </style>
@@ -242,12 +242,14 @@
             if (e.target.closest('#expandAll')) { expandAll(); return; }
             if (e.target.closest('#collapseAll')) { collapseAll(); return; }
             if (e.target.closest('#toggleDark')) {
-                var isDark = document.documentElement.dataset.theme === 'dark';
+                var wrapper = document.querySelector('.feature-tree-wrapper');
+                if (!wrapper) return;
+                var isDark = wrapper.dataset.theme === 'dark';
                 if (isDark) {
-                    document.documentElement.removeAttribute('data-theme');
+                    delete wrapper.dataset.theme;
                     e.target.closest('#toggleDark').innerHTML = '<i class="fa-solid fa-moon"></i> 暗黑模式';
                 } else {
-                    document.documentElement.dataset.theme = 'dark';
+                    wrapper.dataset.theme = 'dark';
                     e.target.closest('#toggleDark').innerHTML = '<i class="fa-solid fa-sun"></i> 明亮模式';
                 }
             }

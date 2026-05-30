@@ -66,7 +66,9 @@ def _build_node(item: dict, level: int = 1, path: str = "0") -> str:
 
     example_html = ""
     if "example_link" in item:
-        example_html = f'<a class="ft-example-btn" href="{item["example_link"]}" title="查看样例">📦 跳转到样例</a>'
+        example_html += f'<a class="ft-example-btn" href="{item["example_link"]}" title="查看样例">📦 跳转到样例(RTD)</a>'
+    if "example_repo_link" in item:
+        example_html += f'<a class="ft-example-btn" href="{item["example_repo_link"]}" title="查看源码仓" target="_blank">📦 跳转到样例(GitCode)</a>'
 
     toggle_cls = "expanded" if (level == 1 and has_child) else "collapsed"
     toggle_no = "no-toggle" if not has_child else ""

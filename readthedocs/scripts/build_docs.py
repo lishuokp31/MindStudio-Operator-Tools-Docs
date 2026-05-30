@@ -7,7 +7,7 @@ import tarfile
 import tempfile
 import fnmatch
 from pathlib import Path
-from yaml_to_html import generate_feature_tree
+from yaml_to_html import generate_feature_tree, generate_merged_feature_tree
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -693,13 +693,11 @@ if __name__ == "__main__":
 
     print("step name ")
 
-    success = generate_feature_tree(
-        yaml_path="feature_tree_SIMD.yaml",
+    success = generate_merged_feature_tree(
+        simd_yaml="feature_tree_SIMD.yaml",
+        simt_yaml="feature_tree_SIMT.yaml",
         template_path="feature_template.html",
         output_path="../docs/overview/index.md",
-        inject_marker="<!-- FEATURE_TREE_INJECT_HERE -->",
-        start_marker="<!-- FEATURE_TREE_START -->",
-        end_marker="<!-- FEATURE_TREE_END -->",
     )
 
     if success:
